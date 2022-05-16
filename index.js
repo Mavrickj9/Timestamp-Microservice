@@ -53,3 +53,10 @@ app.get("/api/timestamp/:input", (request, response) => {
   
   response.json(responseObject)
 })
+
+app.get('/api/timestamp/', (request, response) => {
+  responseObject['unix'] = new Date().getTime()
+  responseObject['utc'] = new Date().toUTCString()
+  
+  response.json(responseObject)
+})
