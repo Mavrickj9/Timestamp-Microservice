@@ -30,3 +30,11 @@ app.get("/api/hello", function (req, res) {
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+
+//timestamp api
+let responseObject = {};
+app.get("/api/timestamp/:input", (request, response) => {
+  let input = request.params.input
+  
+  response.json(input)
+})
