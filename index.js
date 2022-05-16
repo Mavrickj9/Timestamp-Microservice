@@ -33,7 +33,7 @@ var listener = app.listen(process.env.PORT, function () {
 
 //timestamp api
 let responseObject = {};
-app.get("/api/timestamp/:input", (request, response) => {
+app.get("/api/:input", (request, response) => {
   let input = request.params.input
   
   if(input.includes('-')){
@@ -54,7 +54,7 @@ app.get("/api/timestamp/:input", (request, response) => {
   response.json(responseObject)
 })
 
-app.get('/api/timestamp/', (request, response) => {
+app.get('/api', (request, response) => {
   responseObject['unix'] = new Date().getTime()
   responseObject['utc'] = new Date().toUTCString()
   
